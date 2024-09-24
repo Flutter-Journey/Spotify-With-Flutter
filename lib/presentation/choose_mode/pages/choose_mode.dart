@@ -53,13 +53,15 @@ class _ChooseModePageState extends State<ChooseModePage> {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: AppColors.white,
-                    fontSize: 25,
+                    fontSize: 28,
                   ),
                 ),
                 const SizedBox(
-                  height: 25,
+                  height: 28,
                 ),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Column(
                       children: [
@@ -80,7 +82,7 @@ class _ChooseModePageState extends State<ChooseModePage> {
                           ),
                         ),
                         const SizedBox(
-                          height: 15,
+                          height: 20,
                         ),
                         const Text(
                           "Dark Mode",
@@ -127,7 +129,7 @@ class _ChooseModePageState extends State<ChooseModePage> {
                   ],
                 ),
                 const SizedBox(
-                  height: 40,
+                  height: 50,
                 ),
                 BasicAppButton(
                   onPressed: () {
