@@ -1,11 +1,13 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify_with_flutter/common/basic_app_button.dart';
 import 'package:spotify_with_flutter/core/configs/assets/app_images.dart';
 import 'package:spotify_with_flutter/core/configs/assets/app_vectors.dart';
 import 'package:spotify_with_flutter/core/configs/theme/app_color.dart';
+import 'package:spotify_with_flutter/presentation/choose_mode/bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatefulWidget {
   const ChooseModePage({super.key});
@@ -36,7 +38,7 @@ class _ChooseModePageState extends State<ChooseModePage> {
             // child:
           ),
           Container(
-            color: Colors.black.withOpacity(0.15),
+            color: Colors.black.withOpacity(0.5),
           ),
           Padding(
             padding:
@@ -65,20 +67,27 @@ class _ChooseModePageState extends State<ChooseModePage> {
                   children: [
                     Column(
                       children: [
-                        ClipOval(
-                          child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 87, sigmaY: 87),
-                            child: Container(
-                                decoration: BoxDecoration(
-                                  color: AppColors.white.withOpacity(0),
-                                  shape: BoxShape.circle,
-                                ),
-                                height: 73,
-                                width: 73,
-                                child: SvgPicture.asset(
-                                  AppVectors.moon,
-                                  fit: BoxFit.none,
-                                )),
+                        GestureDetector(
+                          onTap: () {
+                            context
+                                .read<ThemeCubit>()
+                                .updateTheme(ThemeMode.dark);
+                          },
+                          child: ClipOval(
+                            child: BackdropFilter(
+                              filter: ImageFilter.blur(sigmaX: 87, sigmaY: 87),
+                              child: Container(
+                                  decoration: BoxDecoration(
+                                    color: AppColors.white.withOpacity(0),
+                                    shape: BoxShape.circle,
+                                  ),
+                                  height: 73,
+                                  width: 73,
+                                  child: SvgPicture.asset(
+                                    AppVectors.moon,
+                                    fit: BoxFit.none,
+                                  )),
+                            ),
                           ),
                         ),
                         const SizedBox(
@@ -96,19 +105,26 @@ class _ChooseModePageState extends State<ChooseModePage> {
                     ),
                     Column(
                       children: [
-                        ClipOval(
-                          child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 87, sigmaY: 87),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: AppColors.white.withOpacity(0),
-                                shape: BoxShape.circle,
-                              ),
-                              height: 73,
-                              width: 73,
-                              child: SvgPicture.asset(
-                                AppVectors.sun,
-                                fit: BoxFit.none,
+                        GestureDetector(
+                          onTap: () {
+                            context
+                                .read<ThemeCubit>()
+                                .updateTheme(ThemeMode.light);
+                          },
+                          child: ClipOval(
+                            child: BackdropFilter(
+                              filter: ImageFilter.blur(sigmaX: 87, sigmaY: 87),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: AppColors.white.withOpacity(0),
+                                  shape: BoxShape.circle,
+                                ),
+                                height: 73,
+                                width: 73,
+                                child: SvgPicture.asset(
+                                  AppVectors.sun,
+                                  fit: BoxFit.none,
+                                ),
                               ),
                             ),
                           ),

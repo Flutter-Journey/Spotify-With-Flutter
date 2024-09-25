@@ -27,10 +27,14 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => ThemeCubit()),
       ],
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: AppTheme.lightTheme,
-        home: const SplashPage(),
+      child: BlocBuilder<ThemeCubit, ThemeMode>(
+        builder: (context, mode) => MaterialApp(
+          title: 'Flutter Demo',
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          themeMode: mode,
+          home: const SplashPage(),
+        ),
       ),
     );
   }
