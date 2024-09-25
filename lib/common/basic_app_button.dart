@@ -5,12 +5,16 @@ class BasicAppButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String title;
   final double height;
+  final double textSize;
+  final FontWeight weight;
 
   const BasicAppButton({
     super.key,
     required this.onPressed,
     required this.title,
     this.height = 80,
+    this.textSize = 26,
+    this.weight = FontWeight.bold,
   });
 
   @override
@@ -20,10 +24,10 @@ class BasicAppButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         title,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
+        style: TextStyle(
+          fontWeight: weight,
           color: AppColors.white,
-          fontSize: 26,
+          fontSize: textSize,
         ),
       ),
     );
