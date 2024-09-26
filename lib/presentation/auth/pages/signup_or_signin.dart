@@ -7,6 +7,7 @@ import 'package:spotify_with_flutter/core/configs/assets/app_images.dart';
 import 'package:spotify_with_flutter/core/configs/assets/app_vectors.dart';
 import 'package:spotify_with_flutter/core/configs/theme/app_color.dart';
 import 'package:spotify_with_flutter/presentation/auth/pages/signup.dart';
+import 'package:spotify_with_flutter/presentation/auth/pages/singin.dart';
 
 class SignupOrSignin extends StatelessWidget {
   const SignupOrSignin({super.key});
@@ -101,7 +102,14 @@ class SignupOrSignin extends StatelessWidget {
                               fontSize: 21,
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => SigninPage(),
+                              ),
+                            );
+                          },
                         ),
                       )
                     ],

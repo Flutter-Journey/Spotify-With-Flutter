@@ -4,6 +4,7 @@ import 'package:spotify_with_flutter/common/widgets/appbar/app_bar.dart';
 import 'package:spotify_with_flutter/common/widgets/button/basic_app_button.dart';
 import 'package:spotify_with_flutter/core/configs/assets/app_vectors.dart';
 import 'package:spotify_with_flutter/core/configs/theme/app_color.dart';
+import 'package:spotify_with_flutter/presentation/auth/pages/singin.dart';
 
 class SignupPage extends StatelessWidget {
   const SignupPage({super.key});
@@ -19,7 +20,7 @@ class SignupPage extends StatelessWidget {
             width: 40,
           ),
         ),
-        bottomNavigationBar: _signinText(),
+        bottomNavigationBar: _signinText(context),
         body: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 30,
@@ -120,7 +121,7 @@ class SignupPage extends StatelessWidget {
     );
   }
 
-  Widget _signinText() {
+  Widget _signinText(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
         vertical: 40,
@@ -137,7 +138,14 @@ class SignupPage extends StatelessWidget {
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => SigninPage(),
+                ),
+              );
+            },
             child: const Text(
               "Sign In",
               style: TextStyle(
