@@ -12,7 +12,7 @@ class BasicAppButton extends StatelessWidget {
     super.key,
     required this.onPressed,
     required this.title,
-    this.height = 80,
+    this.height = 70,
     this.textSize = 26,
     this.weight = FontWeight.bold,
   });
