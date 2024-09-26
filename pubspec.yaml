@@ -39,6 +39,7 @@ dependencies:
   flutter_bloc:
   hydrated_bloc:
   path_provider:
+  firebase_core:
 
 dev_dependencies:
   flutter_test:
