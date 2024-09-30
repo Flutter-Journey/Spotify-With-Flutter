@@ -4,10 +4,17 @@ import 'package:spotify_with_flutter/common/widgets/appbar/app_bar.dart';
 import 'package:spotify_with_flutter/common/widgets/button/basic_app_button.dart';
 import 'package:spotify_with_flutter/core/configs/assets/app_vectors.dart';
 import 'package:spotify_with_flutter/core/configs/theme/app_color.dart';
+import 'package:spotify_with_flutter/data/models/auth/create_user_req.dart';
+import 'package:spotify_with_flutter/domain/usercase/auth/signup.dart';
 import 'package:spotify_with_flutter/presentation/auth/pages/singin.dart';
+import 'package:spotify_with_flutter/service_locator.dart';
 
 class SignupPage extends StatelessWidget {
-  const SignupPage({super.key});
+  SignupPage({super.key});
+
+  final TextEditingController _fullName = TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +48,20 @@ class SignupPage extends StatelessWidget {
               _passwordField(context),
               const SizedBox(height: 30),
               BasicAppButton(
-                onPressed: () {},
+                onPressed: () async {
+                  var result = await sl<SignupUseCase>().call(
+                    params: CreateUserReq(
+                      email: _email.text.toString(),
+                      fullName: _fullName.text.toString(),
+                      password: _password.text.toString(),
+                    ),
+                  );
+
+                  result.fold(
+                    (l) {},
+                    (r) {},
+                  );
+                },
                 title: "Create Account",
                 textSize: 22,
                 weight: FontWeight.w500,
@@ -93,6 +113,7 @@ class SignupPage extends StatelessWidget {
 
   Widget _fullNameField(BuildContext context) {
     return TextField(
+      controller: _fullName,
       decoration: const InputDecoration(
         hintText: "Full Name",
       ).applyDefaults(
@@ -103,6 +124,7 @@ class SignupPage extends StatelessWidget {
 
   Widget _passwordField(BuildContext context) {
     return TextField(
+      controller: _password,
       decoration: const InputDecoration(
         hintText: "Enter Email",
       ).applyDefaults(
@@ -113,6 +135,7 @@ class SignupPage extends StatelessWidget {
 
   Widget _emailField(BuildContext context) {
     return TextField(
+      controller: _email,
       decoration: const InputDecoration(
         hintText: "Password",
       ).applyDefaults(

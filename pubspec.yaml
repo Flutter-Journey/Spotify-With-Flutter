@@ -42,6 +42,7 @@ dependencies:
   firebase_core:
   firebase_auth:
   get_it:
+  dartz:
 
 
 dev_dependencies:
