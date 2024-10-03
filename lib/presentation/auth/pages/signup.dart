@@ -7,6 +7,7 @@ import 'package:spotify_with_flutter/core/configs/theme/app_color.dart';
 import 'package:spotify_with_flutter/data/models/auth/create_user_req.dart';
 import 'package:spotify_with_flutter/domain/usercase/auth/signup.dart';
 import 'package:spotify_with_flutter/presentation/auth/pages/singin.dart';
+import 'package:spotify_with_flutter/presentation/root/pages/root.dart';
 import 'package:spotify_with_flutter/service_locator.dart';
 
 class SignupPage extends StatelessWidget {
@@ -28,7 +29,7 @@ class SignupPage extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: _signinText(context),
-        body: Padding(
+        body: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(
             horizontal: 30,
             vertical: 50,
@@ -58,8 +59,19 @@ class SignupPage extends StatelessWidget {
                   );
 
                   result.fold(
-                    (l) {},
-                    (r) {},
+                    (l) {
+                      var snackBar = SnackBar(content: Text(l));
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    },
+                    (r) {
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => const RootPage(),
+                        ),
+                        (route) => false,
+                      );
+                    },
                   );
                 },
                 title: "Create Account",
