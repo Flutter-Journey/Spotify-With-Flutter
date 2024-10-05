@@ -50,6 +50,8 @@ class SignupPage extends StatelessWidget {
               const SizedBox(height: 30),
               BasicAppButton(
                 onPressed: () async {
+                  print(_email.text.toString());
+
                   var result = await sl<SignupUseCase>().call(
                     params: CreateUserReq(
                       email: _email.text.toString(),
@@ -60,7 +62,13 @@ class SignupPage extends StatelessWidget {
 
                   result.fold(
                     (l) {
-                      var snackBar = SnackBar(content: Text(l));
+                      var snackBar = SnackBar(
+                        content: Text(
+                          l,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        behavior: SnackBarBehavior.floating,
+                      );
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
                     },
                     (r) {
@@ -136,7 +144,7 @@ class SignupPage extends StatelessWidget {
 
   Widget _passwordField(BuildContext context) {
     return TextField(
-      controller: _password,
+      controller: _email,
       decoration: const InputDecoration(
         hintText: "Enter Email",
       ).applyDefaults(
@@ -147,7 +155,7 @@ class SignupPage extends StatelessWidget {
 
   Widget _emailField(BuildContext context) {
     return TextField(
-      controller: _email,
+      controller: _password,
       decoration: const InputDecoration(
         hintText: "Password",
       ).applyDefaults(

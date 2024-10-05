@@ -44,3 +44,5 @@ app.*.map.json
 firebase.json
 android/app/google-services.json
 lib/firebase_options.dart
+ios/Runner/GoogleService-Info.plist
+ios/Runner.xcodeproj/project.pbxproj
