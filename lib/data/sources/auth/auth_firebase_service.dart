@@ -17,7 +17,7 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
         password: signinUserReq.password,
       );
 
-      return Right('Signin  was Successful');
+      return const Right('Signin  was Successful');
     } on FirebaseAuthException catch (e) {
       String message = '';
 
@@ -26,9 +26,8 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
       } else if (e.code == 'invalid-credential') {
         message = 'Wrong password  provided for that user';
       }
-      ;
 
-      return right(message);
+      return Left(message);
     }
   }
 
@@ -49,7 +48,6 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
       } else if (e.code == 'email-already-in-use') {
         message = 'An account already exits with that email.';
       }
-      ;
 
       return left(message);
     }

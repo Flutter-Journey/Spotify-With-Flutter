@@ -5,7 +5,7 @@ import 'package:spotify_with_flutter/common/widgets/button/basic_app_button.dart
 import 'package:spotify_with_flutter/core/configs/assets/app_vectors.dart';
 import 'package:spotify_with_flutter/core/configs/theme/app_color.dart';
 import 'package:spotify_with_flutter/data/models/auth/create_user_req.dart';
-import 'package:spotify_with_flutter/domain/usercase/auth/signup.dart';
+import 'package:spotify_with_flutter/domain/usecase/auth/signup.dart';
 import 'package:spotify_with_flutter/presentation/auth/pages/singin.dart';
 import 'package:spotify_with_flutter/presentation/root/pages/root.dart';
 import 'package:spotify_with_flutter/service_locator.dart';
@@ -50,8 +50,6 @@ class SignupPage extends StatelessWidget {
               const SizedBox(height: 30),
               BasicAppButton(
                 onPressed: () async {
-                  print(_email.text.toString());
-
                   var result = await sl<SignupUseCase>().call(
                     params: CreateUserReq(
                       email: _email.text.toString(),
@@ -63,10 +61,7 @@ class SignupPage extends StatelessWidget {
                   result.fold(
                     (l) {
                       var snackBar = SnackBar(
-                        content: Text(
-                          l,
-                          style: TextStyle(color: Colors.white),
-                        ),
+                        content: Text(l),
                         behavior: SnackBarBehavior.floating,
                       );
                       ScaffoldMessenger.of(context).showSnackBar(snackBar);
