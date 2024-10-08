@@ -43,6 +43,7 @@ dependencies:
   firebase_auth:
   get_it:
   dartz:
+  cloud_firestore:
 
 
 dev_dependencies:
