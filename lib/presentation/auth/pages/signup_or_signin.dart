@@ -28,7 +28,7 @@ class SignupOrSignin extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.bottomLeft,
-            child: Image.asset(AppImages.homeArtist),
+            child: Image.asset(AppImages.chooseAuthBG),
           ),
           Align(
             alignment: Alignment.center,
