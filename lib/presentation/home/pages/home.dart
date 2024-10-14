@@ -5,6 +5,7 @@ import 'package:spotify_with_flutter/core/configs/assets/app_images.dart';
 import 'package:spotify_with_flutter/core/configs/assets/app_vectors.dart';
 import 'package:spotify_with_flutter/core/configs/theme/app_color.dart';
 import 'package:spotify_with_flutter/presentation/home/widgets/news_songs.dart';
+import 'package:spotify_with_flutter/presentation/home/widgets/play_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -32,6 +33,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           children: [
             _homeTopCard(),
             _tabs(),
+            const SizedBox(height: 10),
             SizedBox(
               height: 266,
               child: TabBarView(
@@ -44,6 +46,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 ],
               ),
             ),
+            const SizedBox(height: 25),
+            const PlayList(),
           ],
         ),
       ),
