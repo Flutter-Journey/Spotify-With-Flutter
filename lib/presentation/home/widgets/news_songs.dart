@@ -6,6 +6,7 @@ import 'package:spotify_with_flutter/core/constants/app_urls.dart';
 import 'package:spotify_with_flutter/domain/entities/songs/songs.dart';
 import 'package:spotify_with_flutter/presentation/home/bloc/news_songs_cubit.dart';
 import 'package:spotify_with_flutter/presentation/home/bloc/news_songs_state.dart';
+import 'package:spotify_with_flutter/presentation/song_player.dart/pages/song_player.dart';
 
 class NewsSongs extends StatelessWidget {
   const NewsSongs({super.key});
@@ -44,15 +45,14 @@ class NewsSongs extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20.0),
             child: GestureDetector(
               onTap: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //    builder: (BuildContext context)
-                //   => SongPlayerPage(
-                //     songEntity: songs[index],
-                //   )
-                // )
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => SongPlayerPage(
+                      songEntity: songs[index],
+                    ),
+                  ),
+                );
               },
               child: SizedBox(
                 width: 150,
@@ -66,7 +66,7 @@ class NewsSongs extends StatelessWidget {
                         image: DecorationImage(
                           fit: BoxFit.cover,
                           image: NetworkImage(
-                            '${AppUrls.fireStorage}${AppUrls.temp}${index + 1}.jpg?${AppUrls.mediaAlt}',
+                            '${AppUrls.fireStorage}${AppUrls.temp}${songs[index].idImg}.jpg?${AppUrls.mediaAlt}',
                           ),
                         ),
                       ),

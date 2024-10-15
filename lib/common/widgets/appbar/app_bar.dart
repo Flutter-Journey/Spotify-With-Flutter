@@ -4,12 +4,14 @@ import 'package:spotify_with_flutter/core/configs/theme/app_color.dart';
 
 class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget title;
+  final Widget action;
   final bool hiveBack;
 
   const BasicAppBar({
     super.key,
     this.hiveBack = false,
     this.title = const Text(''),
+    this.action = const SizedBox(),
   });
 
   @override
@@ -19,6 +21,9 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       backgroundColor: Colors.transparent,
       elevation: 0,
+      actions: [
+        action,
+      ],
       leading: hiveBack
           ? null
           : IconButton(
