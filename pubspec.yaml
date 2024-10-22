@@ -45,6 +45,7 @@ dependencies:
   dartz:
   cloud_firestore:
   just_audio:
+  diacritic:
 
 
 dev_dependencies:
