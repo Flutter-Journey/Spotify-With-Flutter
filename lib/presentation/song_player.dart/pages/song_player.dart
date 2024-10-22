@@ -128,6 +128,9 @@ class SongPlayerPage extends StatelessWidget {
                 onChanged: (value) {},
               ),
               const SizedBox(height: 20),
+              Row(
+                children: [],
+              ),
             ],
           );
         }

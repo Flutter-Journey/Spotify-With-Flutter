@@ -11,9 +11,8 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-
   @override
-  void initState(){
+  void initState() {
     super.initState();
     redirect();
   }
@@ -22,9 +21,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: SvgPicture.asset(
-          AppVectors.logo
-        ),
+        child: SvgPicture.asset(AppVectors.logo),
       ),
     );
   }
@@ -32,8 +29,10 @@ class _SplashPageState extends State<SplashPage> {
   Future<void> redirect() async {
     await Future.delayed(const Duration(seconds: 2));
     Navigator.pushReplacement(
-      context, 
-      MaterialPageRoute(builder: (BuildContext context) => const GetStartedPage(),),
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context) => const GetStartedPage(),
+      ),
     );
   }
 }

@@ -34,9 +34,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
                 height: 50,
                 width: 50,
                 decoration: BoxDecoration(
-                  color: context.isDarkMode
-                      ? AppColors.white.withOpacity(0.03)
-                      : AppColors.dark.withOpacity(0.04),
+                  color: context.isDarkMode ? AppColors.white.withOpacity(0.03) : AppColors.dark.withOpacity(0.04),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(

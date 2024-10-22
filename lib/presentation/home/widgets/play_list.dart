@@ -18,9 +18,7 @@ class PlayList extends StatelessWidget {
         child: BlocBuilder<PlayListCubit, PlayListState>(
           builder: (context, state) {
             if (state is PlayListLoading) {
-              return Container(
-                  alignment: Alignment.center,
-                  child: const CircularProgressIndicator());
+              return Container(alignment: Alignment.center, child: const CircularProgressIndicator());
             }
 
             if (state is PlayListLoaded) {
@@ -90,15 +88,11 @@ class PlayList extends StatelessWidget {
                     width: 40,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: context.isDarkMode
-                          ? AppColors.darkGrey
-                          : AppColors.greyWhite,
+                      color: context.isDarkMode ? AppColors.darkGrey : AppColors.greyWhite,
                     ),
                     child: Icon(
                       Icons.play_arrow_rounded,
-                      color: context.isDarkMode
-                          ? AppColors.white
-                          : AppColors.darkGrey,
+                      color: context.isDarkMode ? AppColors.white : AppColors.darkGrey,
                     ),
                   ),
                   const SizedBox(width: 10),

@@ -33,8 +33,7 @@ class GetStartedPage extends StatelessWidget {
             color: Colors.black.withOpacity(0.5),
           ),
           Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 50.0, horizontal: 40.0),
+            padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 40.0),
             child: Column(
               children: [
                 Align(
@@ -70,8 +69,7 @@ class GetStartedPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) =>
-                            const ChooseModePage(),
+                        builder: (BuildContext context) => const ChooseModePage(),
                       ),
                     );
                   },

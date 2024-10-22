@@ -14,11 +14,7 @@ class SongFirebaseServiceImpl extends SongFirebaseService {
   Future<Either> getNewsSongs() async {
     try {
       List<SongEntity> songs = [];
-      var data = await FirebaseFirestore.instance
-          .collection('Songs')
-          .orderBy('releaseDate', descending: true)
-          .limit(3)
-          .get();
+      var data = await FirebaseFirestore.instance.collection('Songs').orderBy('releaseDate', descending: true).limit(3).get();
 
       for (var element in data.docs) {
         var songModel = SongModel.fromJson(element.data());
@@ -38,10 +34,7 @@ class SongFirebaseServiceImpl extends SongFirebaseService {
   Future<Either> getPlayList() async {
     try {
       List<SongEntity> songs = [];
-      var data = await FirebaseFirestore.instance
-          .collection('Songs')
-          .orderBy('releaseDate', descending: true)
-          .get();
+      var data = await FirebaseFirestore.instance.collection('Songs').orderBy('releaseDate', descending: true).get();
 
       for (var element in data.docs) {
         var songModel = SongModel.fromJson(element.data());
