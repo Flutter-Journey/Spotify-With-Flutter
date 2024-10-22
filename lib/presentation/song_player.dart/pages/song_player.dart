@@ -124,12 +124,37 @@ class SongPlayerPage extends StatelessWidget {
               Slider(
                 value: context.read<SongPlayerCubit>().songPosition.inSeconds.toDouble(),
                 min: 0.0,
-                max: context.read<SongPlayerCubit>().songPosition.inSeconds.toDouble(),
+                max: context.read<SongPlayerCubit>().songDuration.inSeconds.toDouble(),
                 onChanged: (value) {},
               ),
               const SizedBox(height: 20),
               Row(
-                children: [],
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    _formatDuration(context.read<SongPlayerCubit>().songPosition),
+                  ),
+                  Text(
+                    _formatDuration(context.read<SongPlayerCubit>().songDuration),
+                  )
+                ],
+              ),
+              const SizedBox(height: 20),
+              GestureDetector(
+                onTap: () {
+                  context.read<SongPlayerCubit>().playOrPauseSong();
+                },
+                child: Container(
+                  height: 60,
+                  width: 60,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.primary,
+                  ),
+                  child: Icon(
+                    context.read<SongPlayerCubit>().audioPlayer.playing ? Icons.pause : Icons.play_arrow,
+                  ),
+                ),
               ),
             ],
           );
@@ -138,5 +163,11 @@ class SongPlayerPage extends StatelessWidget {
         return Container();
       },
     );
+  }
+
+  String _formatDuration(Duration duration) {
+    final minutes = duration.inMinutes.remainder(60);
+    final seconds = duration.inSeconds.remainder(60);
+    return '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
   }
 }
