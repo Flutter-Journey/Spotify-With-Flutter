@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spotify_with_flutter/common/helpers/is_dark_mode.dart';
 import 'package:spotify_with_flutter/common/widgets/appbar/app_bar.dart';
+import 'package:spotify_with_flutter/common/widgets/favorite_button/favorite_button.dart';
 import 'package:spotify_with_flutter/core/configs/theme/app_color.dart';
 import 'package:spotify_with_flutter/core/constants/app_urls.dart';
 import 'package:spotify_with_flutter/domain/entities/songs/songs.dart';
@@ -42,7 +43,7 @@ class SongPlayerPage extends StatelessWidget {
           ),
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
             child: Column(
               children: [
                 _songCover(context),
@@ -99,13 +100,9 @@ class SongPlayerPage extends StatelessWidget {
             ),
           ],
         ),
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.favorite_rounded,
-            size: 30,
-            color: AppColors.darkGrey,
-          ),
+        FavoriteButton(
+          sizeIcons: 30,
+          songEntity: songEntity,
         ),
       ],
     );
@@ -153,6 +150,7 @@ class SongPlayerPage extends StatelessWidget {
                   ),
                   child: Icon(
                     context.read<SongPlayerCubit>().audioPlayer.playing ? Icons.pause : Icons.play_arrow,
+                    color: context.isDarkMode ? AppColors.white : AppColors.darkGrey,
                   ),
                 ),
               ),
