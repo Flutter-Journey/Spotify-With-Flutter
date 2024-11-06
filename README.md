@@ -65,3 +65,10 @@ Check out how the app looks in action! You can view a demo [here](https://www.yo
    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Flutter-Journey/Spotify-With-Flutter&type=Date" />
  </picture>
 </a>
+
+<div align="center">
+
+#### Made by Flutter <img src="https://raw.githubusercontent.com/Flutter-Journey/.github/refs/heads/main/media/flutter_icon.png" height="15"> with Love ❤️ | Developed by [ChunhThanhDe](https://github.com/chunhthanhde)
+
+</div>
+
