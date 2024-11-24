@@ -5,9 +5,11 @@ import 'package:spotify_with_flutter/data/sources/auth/auth_firebase_service.dar
 import 'package:spotify_with_flutter/data/sources/song/song_firebase_service.dart';
 import 'package:spotify_with_flutter/domain/repository/auth/auth.dart';
 import 'package:spotify_with_flutter/domain/repository/song/song.dart';
+import 'package:spotify_with_flutter/domain/usecase/auth/get_user.dart';
 import 'package:spotify_with_flutter/domain/usecase/auth/signin.dart';
 import 'package:spotify_with_flutter/domain/usecase/auth/signup.dart';
 import 'package:spotify_with_flutter/domain/usecase/song/add_or_remove_favorite_song.dart';
+import 'package:spotify_with_flutter/domain/usecase/song/get_favorite_songs.dart';
 import 'package:spotify_with_flutter/domain/usecase/song/get_news_songs.dart';
 import 'package:spotify_with_flutter/domain/usecase/song/get_play_list.dart';
 import 'package:spotify_with_flutter/domain/usecase/song/is_favorite_song.dart';
@@ -39,6 +41,10 @@ Future<void> initializeDependencies() async {
     SigninUseCase(),
   );
 
+  sl.registerSingleton<GetUserUseCase>(
+    GetUserUseCase(),
+  );
+
   sl.registerSingleton<GetNewsSongsUseCase>(
     GetNewsSongsUseCase(),
   );
@@ -53,5 +59,9 @@ Future<void> initializeDependencies() async {
 
   sl.registerSingleton<IsFavoriteSongUseCase>(
     IsFavoriteSongUseCase(),
+  );
+
+  sl.registerSingleton<GetFavoriteSongsUseCase>(
+    GetFavoriteSongsUseCase(),
   );
 }

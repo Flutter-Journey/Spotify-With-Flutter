@@ -46,7 +46,8 @@ class SignupOrSignin extends StatelessWidget {
                     'Enjoy Listening To Music',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: context.isDarkMode ? AppColors.white : AppColors.dark,
+                      color:
+                          context.isDarkMode ? AppColors.white : AppColors.dark,
                       fontSize: 29,
                     ),
                   ),
@@ -57,7 +58,9 @@ class SignupOrSignin extends StatelessWidget {
                     'Spotify is a proprietary Swedish audio streaming and media services provider',
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
-                      color: context.isDarkMode ? AppColors.greyTitle : AppColors.grey,
+                      color: context.isDarkMode
+                          ? AppColors.greyTitle
+                          : AppColors.grey,
                       fontSize: 19,
                     ),
                     textAlign: TextAlign.center,
@@ -93,7 +96,9 @@ class SignupOrSignin extends StatelessWidget {
                             "Sign In",
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
-                              color: context.isDarkMode ? AppColors.white : AppColors.dark,
+                              color: context.isDarkMode
+                                  ? AppColors.white
+                                  : AppColors.dark,
                               fontSize: 21,
                             ),
                           ),

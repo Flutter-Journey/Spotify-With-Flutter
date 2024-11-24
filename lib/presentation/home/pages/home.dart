@@ -6,6 +6,7 @@ import 'package:spotify_with_flutter/core/configs/assets/app_vectors.dart';
 import 'package:spotify_with_flutter/core/configs/theme/app_color.dart';
 import 'package:spotify_with_flutter/presentation/home/widgets/news_songs.dart';
 import 'package:spotify_with_flutter/presentation/home/widgets/play_list.dart';
+import 'package:spotify_with_flutter/presentation/profile/page/profile.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -64,6 +65,19 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       centerTitle: true,
       backgroundColor: Colors.transparent,
       elevation: 0,
+      actions: [
+        IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => const ProfilePage(),
+              ),
+            );
+          },
+          icon: const Icon(Icons.percent),
+        ),
+      ],
       leading: IconButton(
         onPressed: () {
           // Navigator.pop(context);
@@ -72,7 +86,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           height: 50,
           width: 50,
           decoration: BoxDecoration(
-            color: context.isDarkMode ? AppColors.white.withOpacity(0.03) : AppColors.dark.withOpacity(0.04),
+            color: context.isDarkMode
+                ? AppColors.white.withOpacity(0.03)
+                : AppColors.dark.withOpacity(0.04),
             shape: BoxShape.circle,
           ),
           child: Icon(
