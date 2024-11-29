@@ -32,7 +32,9 @@ class SongPlayerPage extends StatelessWidget {
           onPressed: () {},
           icon: Icon(
             Icons.more_vert_rounded,
-            color: context.isDarkMode ? const Color(0xff959595) : const Color(0xff555555),
+            color: context.isDarkMode
+                ? const Color(0xff959595)
+                : const Color(0xff555555),
           ),
         ),
       ),
@@ -119,9 +121,17 @@ class SongPlayerPage extends StatelessWidget {
           return Column(
             children: [
               Slider(
-                value: context.read<SongPlayerCubit>().songPosition.inSeconds.toDouble(),
+                value: context
+                    .read<SongPlayerCubit>()
+                    .songPosition
+                    .inSeconds
+                    .toDouble(),
                 min: 0.0,
-                max: context.read<SongPlayerCubit>().songDuration.inSeconds.toDouble(),
+                max: context
+                    .read<SongPlayerCubit>()
+                    .songDuration
+                    .inSeconds
+                    .toDouble(),
                 onChanged: (value) {},
               ),
               const SizedBox(height: 20),
@@ -129,10 +139,12 @@ class SongPlayerPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    _formatDuration(context.read<SongPlayerCubit>().songPosition),
+                    _formatDuration(
+                        context.read<SongPlayerCubit>().songPosition),
                   ),
                   Text(
-                    _formatDuration(context.read<SongPlayerCubit>().songDuration),
+                    _formatDuration(
+                        context.read<SongPlayerCubit>().songDuration),
                   )
                 ],
               ),
@@ -149,8 +161,12 @@ class SongPlayerPage extends StatelessWidget {
                     color: AppColors.primary,
                   ),
                   child: Icon(
-                    context.read<SongPlayerCubit>().audioPlayer.playing ? Icons.pause : Icons.play_arrow,
-                    color: context.isDarkMode ? AppColors.white : AppColors.darkGrey,
+                    context.read<SongPlayerCubit>().audioPlayer.playing
+                        ? Icons.pause
+                        : Icons.play_arrow,
+                    color: context.isDarkMode
+                        ? AppColors.white
+                        : AppColors.darkGrey,
                   ),
                 ),
               ),

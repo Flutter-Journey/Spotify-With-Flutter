@@ -42,7 +42,8 @@ class _ChooseModePageState extends State<ChooseModePage> {
             color: Colors.black.withOpacity(0.5),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 40.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 50.0, horizontal: 40.0),
             child: Column(
               children: [
                 Align(
@@ -69,7 +70,9 @@ class _ChooseModePageState extends State<ChooseModePage> {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
+                            context
+                                .read<ThemeCubit>()
+                                .updateTheme(ThemeMode.dark);
                           },
                           child: ClipOval(
                             child: BackdropFilter(
@@ -105,7 +108,9 @@ class _ChooseModePageState extends State<ChooseModePage> {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            context.read<ThemeCubit>().updateTheme(ThemeMode.light);
+                            context
+                                .read<ThemeCubit>()
+                                .updateTheme(ThemeMode.light);
                           },
                           child: ClipOval(
                             child: BackdropFilter(
@@ -148,7 +153,8 @@ class _ChooseModePageState extends State<ChooseModePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => const SignupOrSignin(),
+                        builder: (BuildContext context) =>
+                            const SignupOrSignin(),
                       ),
                     );
                   },

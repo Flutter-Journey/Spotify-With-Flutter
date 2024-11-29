@@ -6,12 +6,14 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget title;
   final Widget action;
   final bool hiveBack;
+  final Color backgroundColor;
 
   const BasicAppBar({
     super.key,
     this.hiveBack = false,
     this.title = const Text(''),
     this.action = const SizedBox(),
+    this.backgroundColor = Colors.transparent,
   });
 
   @override
@@ -19,7 +21,7 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: title,
       centerTitle: true,
-      backgroundColor: Colors.transparent,
+      backgroundColor: backgroundColor,
       elevation: 0,
       actions: [
         action,
@@ -34,7 +36,9 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
                 height: 50,
                 width: 50,
                 decoration: BoxDecoration(
-                  color: context.isDarkMode ? AppColors.white.withOpacity(0.03) : AppColors.dark.withOpacity(0.04),
+                  color: context.isDarkMode
+                      ? AppColors.white.withOpacity(0.03)
+                      : AppColors.dark.withOpacity(0.04),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(

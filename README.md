@@ -4,7 +4,11 @@ A beautiful and interactive **Spotify Clone** built using Flutter. Show some ❤
 
 ###### Contact for work, email: chunhthanhde.dev@gmail.com
 
-<img src="assets/icons/spotify_logo.png" height="120px" alt="spotify logo"/>
+<br>
+
+<img src="assets/images/spotify_logo.png" alt="spotify logo"/>
+
+<br>
 
 ![GitHub stars](https://img.shields.io/github/stars/Flutter-Journey/Spotify-With-Flutter?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/Flutter-Journey/Spotify-With-Flutter?style=social)
@@ -18,24 +22,40 @@ A beautiful and interactive **Spotify Clone** built using Flutter. Show some ❤
 
 ## 🎵 Overview
 
-**Spotify With Flutter** is a music streaming app inspired by Spotify, featuring a smooth user interface and core functionalities like song playback, playlists, and browsing music. Developed using Flutter, it is available on Android, iOS, and web platforms.
+**Spotify With Flutter** is a demo music streaming app inspired by Spotify, featuring a smooth user interface and basic functionalities like firebase login, play music, and favorites song screen. Developed using Flutter, it is available on Android, iOS
 
-## 🌟 Features
+> Note: This project uses mock data and is not affiliated with or integrated with Spotify’s official API.
 
-- **Music Streaming**: Stream your favorite songs seamlessly.
-- **Beautiful UI**: A modern and sleek design similar to the original Spotify app.
-- **Playlist Management**: Create and manage your playlists with ease.
-- **Search Functionality**: Search for your favorite songs, artists, and albums.
-- **Cross-Platform**: Available on Android, iOS, and web.
+## 🖥️ Screens and Features
+
+- **Home Screen**: Displays playlists and recommended songs.
+- **Playlist Screen**: View and manage your playlists.
+- **Song Player Screen**: Play songs with full controls.
+- **Profile Screen**: View user information and favorite tracks.
+
+## 🎨 Figma Design
+
+- [Light Mode Design](https://www.figma.com/community/file/1166665330965959412/spotify-redesign-free-ui-kit-light)
+- [Dark Mode Design](https://www.figma.com/community/file/1172466818809176172/spotify-redesign-free-ui-kit-dark-mode)
 
 ## 🎮 Demo
 
-Check out how the app looks in action! You can view a demo [here](https://www.youtube.com/watch?v=demo_link).
+Check out how the app looks in action! You can view a demo [here](https://www.youtube.com/shorts/aEHOczCZQ00).
 
 <table>
 <tr>
-<td><img src="https://github.com/Flutter-Journey/Spotify-With-Flutter/blob/master/media/screenshot1.jpg" height="300px"></td>
-<td><img src="https://github.com/Flutter-Journey/Spotify-With-Flutter/blob/master/media/screenshot2.jpg" height="300px"></td>
+<td><img src="https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/gif/spotify_light.gif"></td>
+<td><img src="https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/gif/spotify_dark.gif"></td>
+</tr>
+</table>
+
+## 🏏 Screen
+
+<table>
+<tr>
+<td><img src="https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/image/login_screen.png"></td>
+<td><img src="https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/image/choose_mode_screen.png"></td>
+<td><img src="https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/image/home_screen.png"></td>
 </tr>
 </table>
 
@@ -43,14 +63,9 @@ Check out how the app looks in action! You can view a demo [here](https://www.yo
 
 - **Flutter**: Framework for building natively compiled applications.
 - **Dart**: The programming language used for Flutter development.
-- **Spotify API**: Integration with Spotify's API for fetching music data.
-- **Animations**: Smooth animations for enhancing the user experience.
-
-## 📚 References
-
-- [Official Flutter Documentation](https://flutter.dev/docs)
-- [Dart Documentation](https://dart.dev/guides)
-- [Spotify API Documentation](https://developer.spotify.com/documentation/web-api/)
+- **Firebase**: Backend as a Service for authentication, storage, and database.
+- **BLoC (Business Logic Component)**: For state management.
+- **Clean Architecture**: For scalable and maintainable code.
 
 ## 🌟 Conclusion
 

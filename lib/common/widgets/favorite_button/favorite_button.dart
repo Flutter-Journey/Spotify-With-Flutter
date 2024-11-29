@@ -8,11 +8,13 @@ import 'package:spotify_with_flutter/domain/entities/songs/songs.dart';
 class FavoriteButton extends StatelessWidget {
   final SongEntity songEntity;
   final double sizeIcons;
+  final Function? function;
 
   const FavoriteButton({
     super.key,
     required this.songEntity,
     this.sizeIcons = 25,
+    this.function,
   });
 
   @override
@@ -27,9 +29,15 @@ class FavoriteButton extends StatelessWidget {
                 await context.read<FavoriteButtonCubit>().favoriteButtonUpdated(
                       songEntity.songId,
                     );
+
+                if (function != null) {
+                  function!();
+                }
               },
               icon: Icon(
-                songEntity.isFavorite ? Icons.favorite : Icons.favorite_outline_outlined,
+                songEntity.isFavorite
+                    ? Icons.favorite
+                    : Icons.favorite_outline_outlined,
                 size: sizeIcons,
                 color: AppColors.darkGrey,
               ),
@@ -44,7 +52,9 @@ class FavoriteButton extends StatelessWidget {
                     );
               },
               icon: Icon(
-                state.isFavorite ? Icons.favorite : Icons.favorite_outline_outlined,
+                state.isFavorite
+                    ? Icons.favorite
+                    : Icons.favorite_outline_outlined,
                 size: sizeIcons,
                 color: AppColors.darkGrey,
               ),
