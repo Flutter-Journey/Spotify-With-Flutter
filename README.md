@@ -42,22 +42,25 @@ A beautiful and interactive **Spotify Clone** built using Flutter. Show some ❤
 
 Check out how the app looks in action! You can view a demo [here](https://www.youtube.com/shorts/aEHOczCZQ00).
 
-<table>
-<tr>
-<td><img src="https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/gif/spotify_light.gif"></td>
-<td><img src="https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/gif/spotify_dark.gif"></td>
-</tr>
-</table>
+<details>
+<summary> <em> Gif Demo</em> 🕹️
+</summary>
+
+<br>
+
+| Light Mode                                                                 | Dark Mode                                                                 |
+|---------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| ![Light Mode](https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/gif/spotify_light.gif) | ![Dark Mode](https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/gif/spotify_dark.gif) |
+
+<br>
+</details>
 
 ## 🏏 Screen
 
-<table>
-<tr>
-<td><img src="https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/image/login_screen.png"></td>
-<td><img src="https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/image/choose_mode_screen.png"></td>
-<td><img src="https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/image/home_screen.png"></td>
-</tr>
-</table>
+| Login Screen                                                              | Choose Mode Screen                                                       | Home Screen                                                              |
+|---------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| ![Login Screen](https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/image/login_screen.png) | ![Choose Mode Screen](https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/image/choose_mode_screen.png) | ![Home Screen](https://raw.githubusercontent.com/Flutter-Journey/Spotify-With-Flutter/refs/heads/main/media/image/home_screen.png) |
+
 
 ## 🛠️ Technologies Used
 
